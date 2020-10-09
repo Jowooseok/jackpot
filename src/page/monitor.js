@@ -83,9 +83,15 @@ const Monitor = () => {
                         if(type.val()==="TSO"){
                             if(levelDB&&levelDB.val()<6){
                                 setMinutes(19);
+                                firebase.database().ref('timer').update({
+                                    minutes : minutes,
+                                });
                             }
                             else {
                                 setMinutes(14)
+                                firebase.database().ref('timer').update({
+                                    minutes : minutes,
+                                });
                             }
                             setSeconds(59);
                             firebase.database().ref('timer').update({
@@ -95,8 +101,14 @@ const Monitor = () => {
                         if (type.val() === "Tournament") {
                             if (levelDB && levelDB.val() < 5) {
                                 setMinutes(29);
+                                firebase.database().ref('timer').update({
+                                    minutes : minutes,
+                                });
                             } else {
                                 setMinutes(14)
+                                firebase.database().ref('timer').update({
+                                    minutes : minutes,
+                                });
                             }
                             setSeconds(59);
                             firebase.database().ref('timer').update({
@@ -105,6 +117,9 @@ const Monitor = () => {
                         }
                         if (type.val() === "Monster" || type.val() === "FastDaily") {
                             setMinutes(9);
+                            firebase.database().ref('timer').update({
+                                minutes : minutes,
+                            });
                             setSeconds(59);
                             firebase.database().ref('timer').update({
                                 seconds : seconds,
@@ -130,10 +145,16 @@ const Monitor = () => {
                         if (type.val() === "Daily" || type.val() === "KSOP Seed") {
                             if (type.val() === "KSOP Seed") {
                                 setMinutes(9);
+                                firebase.database().ref('timer').update({
+                                    minutes : minutes,
+                                });
                             }
 
                             if (type.val() === "Daily") {
                                 setMinutes(6);
+                                firebase.database().ref('timer').update({
+                                    minutes : minutes,
+                                });
                             }
 
                             setSeconds(59);
@@ -147,6 +168,9 @@ const Monitor = () => {
 
                 } else {
                     setMinutes(minutes - 1);
+                    firebase.database().ref('timer').update({
+                        minutes : minutes,
+                    });
                     setSeconds(59);
                     firebase.database().ref('timer').update({
                         seconds : seconds,
@@ -159,6 +183,9 @@ const Monitor = () => {
         console.log(wait && wait.val().toString().split('/'));
         if (tempTime && tempTime.val() !== 0) {
             setMinutes(tempTime.val());
+            firebase.database().ref('timer').update({
+                minutes : minutes,
+            });
             setSeconds(0);
             firebase.database().ref('timer').update({
                 seconds : seconds,
@@ -166,30 +193,45 @@ const Monitor = () => {
         } else {
             if (type && type.val() === "Monster") {
                 setMinutes(10);
+                firebase.database().ref('timer').update({
+                    minutes : minutes,
+                });
                 setSeconds(0);
                 firebase.database().ref('timer').update({
                     seconds : seconds,
                 });
             } else if (type && type.val() === "Daily") {
                 setMinutes(7);
+                firebase.database().ref('timer').update({
+                    minutes : minutes,
+                });
                 setSeconds(0);
                 firebase.database().ref('timer').update({
                     seconds : seconds,
                 });
             } else if (type && type.val() === "KSOP Seed") {
                 setMinutes(10);
+                firebase.database().ref('timer').update({
+                    minutes : minutes,
+                });
                 setSeconds(0);
                 firebase.database().ref('timer').update({
                     seconds : seconds,
                 });
             } else if (type && type.val() === "FastDaily") {
                 setMinutes(10);
+                firebase.database().ref('timer').update({
+                    minutes : minutes,
+                });
                 setSeconds(0);
                 firebase.database().ref('timer').update({
                     seconds : seconds,
                 });
             } else if (type && type.val() === "Tournament") {
                 setMinutes(30);
+                firebase.database().ref('timer').update({
+                    minutes : minutes,
+                });
                 setSeconds(0);
                 firebase.database().ref('timer').update({
                     seconds : seconds,
@@ -197,6 +239,9 @@ const Monitor = () => {
             }
             else if (type && type.val() === "TSO") {
                 setMinutes(20);
+                firebase.database().ref('timer').update({
+                    minutes : minutes,
+                });
                 setSeconds(0);
                 firebase.database().ref('timer').update({
                     seconds : seconds,
@@ -211,6 +256,9 @@ const Monitor = () => {
 
                 setSeconds(0);
                 setMinutes(10);
+                firebase.database().ref('timer').update({
+                    minutes : minutes,
+                });
                 firebase.database().ref('timer').update({
                     seconds : seconds,
                 });
@@ -229,6 +277,9 @@ const Monitor = () => {
             // }
             else if (type && type.val()==="Tournament") {
                 setMinutes(30);
+                firebase.database().ref('timer').update({
+                    minutes : minutes,
+                });
                 setSeconds(0);
                 firebase.database().ref('timer').update({
                     seconds : seconds,
@@ -239,6 +290,9 @@ const Monitor = () => {
             }
             else if (type && type.val()==="TSO") {
                 setMinutes(20);
+                firebase.database().ref('timer').update({
+                    minutes : minutes,
+                });
                 setSeconds(0);
                 firebase.database().ref('timer').update({
                     seconds : seconds,
@@ -252,6 +306,9 @@ const Monitor = () => {
                     seconds : seconds,
                 });
                 setMinutes(7);
+                firebase.database().ref('timer').update({
+                    minutes : minutes,
+                });
                 firebase.database().ref('timer').update({
                     trigger: 2
                 })
