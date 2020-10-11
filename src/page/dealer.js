@@ -92,133 +92,6 @@ const Dealer = () => {
         return this;
     };
 
-    useInterval(() => {
-        if (trigger && trigger.val() === 1) {
-            if (seconds && seconds.val() === 0) {
-                if (minutes && minutes.val() === 0) {
-                    if (isTemp) {
-                        firebase.database().ref('timer/').update({
-                            minutes: temp === 0 ? 0 : temp - 1
-                        })
-                        firebase.database().ref('timer/').update({
-                            seconds: 59
-                        })
-                        if (type.val() === "Monster") {
-                            if (blindDB && blindDB.val() < 10) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 1
-                                })
-                            } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 50) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 10
-                                })
-                            } else if (blindDB && blindDB.val() === 50) {
-                                firebase.database().ref('timer/').update({
-                                    blind: 100
-                                })
-                            } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 500) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 100
-                                })
-                            } else if (blindDB && blindDB.val() === 500) {
-                                firebase.database().ref('timer/').update({
-                                    blind: 1000
-                                })
-                            } else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 5000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 1000
-                                })
-                            } else if (blindDB && blindDB.val() === 5000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: 10000
-                                })
-                            } else if (blindDB && blindDB.val() >= 10000 && blindDB && blindDB.val() < 50000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 10000
-                                })
-                            }
-                        }
-                        else if (type.val() === "Daily" || type.val() === "KSOP Seed") {
-
-                            if (blindDB && blindDB.val() === 5 || blindDB && blindDB.val() === 50 || blindDB && blindDB.val() === 500) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() * 2
-                                })
-                            } else if (blindDB && blindDB.val() < 5) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 1
-                                })
-                            } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 50) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 10
-                                })
-                            } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 500) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 100
-                                })
-                            } else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 5000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 1000
-                                })
-                            }
-                        } else if (type.val() === "FastDaily") {
-                            if (blindDB && blindDB.val() === 5 || blindDB && blindDB.val() === 50 || blindDB && blindDB.val() === 500 || blindDB && blindDB.val() === 5000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() * 2
-                                })
-                            } else if (blindDB && blindDB.val() < 5) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 2
-                                })
-                            } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 100) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 20
-                                })
-                            } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 1000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 100
-                                })
-                            } else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 10000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 1000
-                                })
-                            }
-                        } else if (type.val() === "Tournament") {
-                            if (blindDB && blindDB.val() < 5) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 1
-                                })
-                            } else if (blindDB && blindDB.val() === 5) {
-                                firebase.database().ref('timer/').update({
-                                    blind: 10
-                                })
-                            } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 100) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 10
-                                })
-                            } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 1000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 100
-                                })
-                            }
-                            else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 10000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 1000
-                                })
-                            }
-                        }
-                    
-                    }
-
-                }
-
-
-            }
-
-        }
-    }, 1000);
-
-
     useEffect(() => {
         if (subB && oneB && twoB && threeB && sevenB && eightB && nineB && tenB && elevenB) {
             setTotal(subB.val() + oneB.val() + twoB.val() + threeB.val() + fourB.val() + fiveB.val() + sixB.val() + sevenB.val() + eightB.val() + nineB.val() + tenB.val() + elevenB.val())
@@ -397,7 +270,7 @@ const Dealer = () => {
                         seconds: 0
                     })
                     firebase.database().ref('timer').update({
-                        minutes: 7
+                        minutes: 1
                     })
                 }
             }>
@@ -526,10 +399,6 @@ const Dealer = () => {
             <input style={{ width: '100px' }} type="text" value={temp} onChange={e => setTemp(e.target.value)} />
             <button style={{ marginLeft: '4px' }} onClick={() => {
                 if (temp !== 0) {
-                    firebase.database().ref('timer').update({
-                        time: temp
-                    });
-
                     firebase.database().ref('timer').update({
                         seconds: 0
                     })

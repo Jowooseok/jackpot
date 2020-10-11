@@ -70,218 +70,214 @@ const Monitor = () => {
 
                 if (minutes && minutes.val() === 0) {
                     audio.play();
-                    if (tempTime && tempTime.val() !== 0) {
 
+                    if (type.val() === "TSO") {
                         firebase.database().ref('timer').update({
-                            minutes: tempTime && tempTime.val() - 1,
+                            minutes: 19,
                         });
-                        firebase.database().ref('timer').update({
-                            seconds: 59,
-                        });
+                        if (levelDB && levelDB.val() < 6) {
 
-                    } else {
-                        if (type.val() === "TSO") {
-                            if (levelDB && levelDB.val() < 6) {
-
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 1
-                                })
-                            }
-                            else {
-
-                                if (blindDB && blindDB.val() === 6) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 2
-                                    })
-                                }
-
-                                else if (blindDB && blindDB.val() === 8) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 2
-                                    })
-                                }
-                                else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 60) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 10
-                                    })
-                                }
-                                else if (blindDB && blindDB.val() === 60) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 20
-                                    })
-                                }
-                                else if (blindDB && blindDB.val() === 80) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 20
-                                    })
-                                }
-                                else if (blindDB && blindDB.val() > 80) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 100
-                                    })
-                                }
-                            }
-
-                            firebase.database().ref('timer').update({
-                                seconds: 59,
-                            });
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 1
+                            })
                         }
-                        if (type.val() === "Tournament") {
-                            if (levelDB && levelDB.val() < 5) {
-
-                                if (blindDB && blindDB.val() < 5) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 1
-                                    })
-                                } else if (blindDB && blindDB.val() === 5) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: 10
-                                    })
-                                } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 100) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 10
-                                    })
-                                } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 1000) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 100
-                                    })
-                                }
-                                else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 10000) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 1000
-                                    })
-                                }
-
-
-                            } else {
-
-
-
-                                if (blindDB && blindDB.val() < 5) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 1
-                                    })
-                                } else if (blindDB && blindDB.val() === 5) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: 10
-                                    })
-                                } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 100) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 10
-                                    })
-                                } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 1000) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 100
-                                    })
-                                }
-                                else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 10000) {
-                                    firebase.database().ref('timer/').update({
-                                        blind: blindDB.val() + 1000
-                                    })
-                                }
-                            }
-
-                        }
-                        if (type.val() === "Monster") {
-
-                            if (blindDB && blindDB.val() < 10) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 1
-                                })
-                            } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 50) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 10
-                                })
-                            } else if (blindDB && blindDB.val() === 50) {
-                                firebase.database().ref('timer/').update({
-                                    blind: 100
-                                })
-                            } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 500) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 100
-                                })
-                            } else if (blindDB && blindDB.val() === 500) {
-                                firebase.database().ref('timer/').update({
-                                    blind: 1000
-                                })
-                            } else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 5000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 1000
-                                })
-                            } else if (blindDB && blindDB.val() === 5000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: 10000
-                                })
-                            } else if (blindDB && blindDB.val() >= 10000 && blindDB && blindDB.val() < 50000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 10000
-                                })
-                            }
-                        }
-                        if (type.val() === "FastDaily") {
-                            if (blindDB && blindDB.val() === 5 || blindDB && blindDB.val() === 50 || blindDB && blindDB.val() === 500 || blindDB && blindDB.val() === 5000) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() * 2
-                                })
-                            } else if (blindDB && blindDB.val() < 5) {
+                        else {
+                            if (blindDB && blindDB.val() === 6) {
                                 firebase.database().ref('timer/').update({
                                     blind: blindDB.val() + 2
                                 })
-                            } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 100) {
+                            }
+
+                            else if (blindDB && blindDB.val() === 8) {
+                                firebase.database().ref('timer/').update({
+                                    blind: blindDB.val() + 2
+                                })
+                            }
+                            else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 60) {
+                                firebase.database().ref('timer/').update({
+                                    blind: blindDB.val() + 10
+                                })
+                            }
+                            else if (blindDB && blindDB.val() === 60) {
                                 firebase.database().ref('timer/').update({
                                     blind: blindDB.val() + 20
+                                })
+                            }
+                            else if (blindDB && blindDB.val() === 80) {
+                                firebase.database().ref('timer/').update({
+                                    blind: blindDB.val() + 20
+                                })
+                            }
+                            else if (blindDB && blindDB.val() > 80) {
+                                firebase.database().ref('timer/').update({
+                                    blind: blindDB.val() + 100
+                                })
+                            }
+                        }
+
+                        firebase.database().ref('timer').update({
+                            seconds: 4,
+                        });
+                    }
+                    if (type.val() === "Tournament") {
+                        firebase.database().ref('timer').update({
+                            minutes: 29,
+                        });
+                        if (levelDB && levelDB.val() < 5) {
+                            if (blindDB && blindDB.val() < 5) {
+                                firebase.database().ref('timer/').update({
+                                    blind: blindDB.val() + 1
+                                })
+                            } else if (blindDB && blindDB.val() === 5) {
+                                firebase.database().ref('timer/').update({
+                                    blind: 10
+                                })
+                            } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 100) {
+                                firebase.database().ref('timer/').update({
+                                    blind: blindDB.val() + 10
                                 })
                             } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 1000) {
                                 firebase.database().ref('timer/').update({
                                     blind: blindDB.val() + 100
                                 })
-                            } else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 10000) {
+                            }
+                            else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 10000) {
                                 firebase.database().ref('timer/').update({
                                     blind: blindDB.val() + 1000
                                 })
                             }
 
-                        }
-                        if (type.val() === "Daily" || type.val() === "KSOP Seed") {
 
-
-                            if (blindDB && blindDB.val() === 5 || blindDB && blindDB.val() === 50 || blindDB && blindDB.val() === 500) {
-                                firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() * 2
-                                })
-                            } else if (blindDB && blindDB.val() < 5) {
+                        } else {
+                            if (blindDB && blindDB.val() < 5) {
                                 firebase.database().ref('timer/').update({
                                     blind: blindDB.val() + 1
                                 })
-                            } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 50) {
+                            } else if (blindDB && blindDB.val() === 5) {
+                                firebase.database().ref('timer/').update({
+                                    blind: 10
+                                })
+                            } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 100) {
                                 firebase.database().ref('timer/').update({
                                     blind: blindDB.val() + 10
                                 })
-                            } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 500) {
+                            } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 1000) {
                                 firebase.database().ref('timer/').update({
                                     blind: blindDB.val() + 100
                                 })
-                            } else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 5000) {
+                            }
+                            else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 10000) {
                                 firebase.database().ref('timer/').update({
-                                    blind: blindDB.val() + 10000
+                                    blind: blindDB.val() + 1000
                                 })
                             }
+                        }
 
+                    }
+                    if (type.val() === "Monster") {
+                        firebase.database().ref('timer').update({
+                            minutes: 9,
+                        });
 
+                        if (blindDB && blindDB.val() < 10) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 1
+                            })
+                        } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 50) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 10
+                            })
+                        } else if (blindDB && blindDB.val() === 50) {
+                            firebase.database().ref('timer/').update({
+                                blind: 100
+                            })
+                        } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 500) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 100
+                            })
+                        } else if (blindDB && blindDB.val() === 500) {
+                            firebase.database().ref('timer/').update({
+                                blind: 1000
+                            })
+                        } else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 5000) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 1000
+                            })
+                        } else if (blindDB && blindDB.val() === 5000) {
+                            firebase.database().ref('timer/').update({
+                                blind: 10000
+                            })
+                        } else if (blindDB && blindDB.val() >= 10000 && blindDB && blindDB.val() < 50000) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 10000
+                            })
+                        }
+                    }
+                    if (type.val() === "FastDaily") {
+                        firebase.database().ref('timer').update({
+                            minutes: 9,
+                        });
+                        if (blindDB && blindDB.val() === 5 || blindDB && blindDB.val() === 50 || blindDB && blindDB.val() === 500 || blindDB && blindDB.val() === 5000) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() * 2
+                            })
+                        } else if (blindDB && blindDB.val() < 5) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 2
+                            })
+                        } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 100) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 20
+                            })
+                        } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 1000) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 100
+                            })
+                        } else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 10000) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 1000
+                            })
+                        }
+
+                    }
+                    if (type.val() === "Daily" || type.val() === "KSOP Seed") {
+                        firebase.database().ref('timer').update({
+                            minutes: 6,
+                        });
+                        if (blindDB && blindDB.val() === 5 || blindDB && blindDB.val() === 50 || blindDB && blindDB.val() === 500) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() * 2
+                            })
+                        } else if (blindDB && blindDB.val() < 5) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 1
+                            })
+                        } else if (blindDB && blindDB.val() >= 10 && blindDB && blindDB.val() < 50) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 10
+                            })
+                        } else if (blindDB && blindDB.val() >= 100 && blindDB && blindDB.val() < 500) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 100
+                            })
+                        } else if (blindDB && blindDB.val() >= 1000 && blindDB && blindDB.val() < 5000) {
+                            firebase.database().ref('timer/').update({
+                                blind: blindDB.val() + 10000
+                            })
                         }
 
 
                     }
-                       firebase.database().ref('timer').update({
-                        minutes: minutes.val() - 1,
-                    });
 
                     firebase.database().ref('timer').update({
-                        seconds: 59,
+                        seconds: 4,
                     });
                     firebase.database().ref('timer/').update({
                         level: levelDB.val() + 1
                     })
+
+
+
 
                 }
                 else {
@@ -290,25 +286,25 @@ const Monitor = () => {
                     });
 
                     firebase.database().ref('timer').update({
-                        seconds: 59,
+                        seconds: 4,
                     });
                 }
             }
         }
     }, 1000);
-    useEffect(() => {
-        console.log(wait && wait.val().toString().split('/'));
-        if (tempTime && tempTime.val() !== 0) {
-            firebase.database().ref('timer').update({
-                minutes: tempTime.val(),
-            });
+    // useEffect(() => {
+    //     console.log(wait && wait.val().toString().split('/'));
+    //     if (tempTime && tempTime.val() !== 0) {
+    //         firebase.database().ref('timer').update({
+    //             minutes: tempTime.val(),
+    //         });
 
-            firebase.database().ref('timer').update({
-                seconds: 0,
-            });
-        }
+    //         firebase.database().ref('timer').update({
+    //             seconds: 0,
+    //         });
+    //     }
 
-    }, [type, tempTime]);
+    // }, [type, tempTime]);
 
     useEffect(() => {
         setWaitList(wait && wait.val().toString().split("/"));
