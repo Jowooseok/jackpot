@@ -53,6 +53,7 @@ const Monitor = () => {
     const [subB] = useObject(firebase.database().ref('/user/sub/b'));
 
     useInterval(() => {
+
         if (trigger && trigger.val() === 1) {
             if (seconds && seconds.val() > 0) {
                 firebase.database().ref('timer').update({
@@ -416,7 +417,7 @@ const Monitor = () => {
                             <div style={{
                                 fontSize: '33em',
                                 lineHeight: '0.95'
-                            }}>{minutes && minutes.val()}:{seconds && seconds.val() < 10 ? '0' + seconds && seconds.val() : seconds && seconds.val()}</div>
+                            }}>{minutes && minutes.val()}:{seconds && seconds.val() < 10 ? '0' + seconds.val() : seconds && seconds.val()}</div>
                         </Row>
                     </Col>
 
