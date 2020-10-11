@@ -343,7 +343,7 @@ const Monitor = () => {
                         <Row align={'middle'}>
                             <Col span={5}>
                                 <Row justify={'center'} style={{fontSize: '45px'}}>
-                                    Table 1
+                                    Table 2
                                 </Row>
                             </Col>
                             <Col span={5}></Col>
