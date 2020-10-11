@@ -116,7 +116,7 @@ const Monitor = () => {
                         }
 
                         firebase.database().ref('timer').update({
-                            seconds: 4,
+                            seconds: 59,
                         });
                     }
                     if (type.val() === "Tournament") {
@@ -270,7 +270,7 @@ const Monitor = () => {
                     }
 
                     firebase.database().ref('timer').update({
-                        seconds: 4,
+                        seconds: 59,
                     });
                     firebase.database().ref('timer/').update({
                         level: levelDB.val() + 1
@@ -286,7 +286,7 @@ const Monitor = () => {
                     });
 
                     firebase.database().ref('timer').update({
-                        seconds: 4,
+                        seconds: 59,
                     });
                 }
             }

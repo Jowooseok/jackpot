@@ -270,7 +270,7 @@ const Dealer = () => {
                         seconds: 0
                     })
                     firebase.database().ref('timer').update({
-                        minutes: 1
+                        minutes: 7
                     })
                 }
             }>
