@@ -380,7 +380,7 @@ const Monitor = () => {
                                              color: 'yellow',
                                              fontSize: '90px',
                                              lineHeight: '1.0'
-                                         }}>{levelDB && levelDB.val() >= 3 ? blindDB && blindDB.val() * 2 : 0}</Row>
+                                         }}>{blindDB && blindDB.val() >= 3 ? blindDB && blindDB.val() * 2 : 0}</Row>
                                 </Col>
                                 : <Fragment/>
                             }
@@ -393,7 +393,7 @@ const Monitor = () => {
                                              color: 'yellow',
                                              fontSize: '90px',
                                              lineHeight: '1.0'
-                                         }}>{levelDB && levelDB.val() >= 4 ? blindDB && blindDB.val() * 2 : 0}</Row>
+                                         }}>{blindDB && blindDB.val() >= 4 ? blindDB && blindDB.val() * 2 : 0}</Row>
                                 </Col>
                                 :
                                 <></>
@@ -407,7 +407,7 @@ const Monitor = () => {
                                              color: 'yellow',
                                              fontSize: '90px',
                                              lineHeight: '1.0'
-                                         }}>{levelDB && levelDB.val() >= 10 ? blindDB && blindDB.val() * 2 : 0}</Row>
+                                         }}>{blindDB && blindDB.val() >= 10 ? blindDB && blindDB.val() * 2 : 0}</Row>
                                 </Col>
                                 :
                                 <></>
@@ -421,7 +421,7 @@ const Monitor = () => {
                                              color: 'yellow',
                                              fontSize: '90px',
                                              lineHeight: '1.0'
-                                         }}>{levelDB && levelDB.val() >= 5 ? blindDB && blindDB.val() * 2 : 0}</Row>
+                                         }}>{blindDB && blindDB.val() >= 5 ? blindDB && blindDB.val() * 2 : 0}</Row>
                                 </Col>
                                 :
                                 <></>

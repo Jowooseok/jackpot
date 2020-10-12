@@ -27,16 +27,16 @@ const Table = () => {
         }}>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
             <div style={{fontSize:'4em' , color:'white', fontFamily:`Noto Sans KR, sans-serif`}}>
-                <span style={{position:'absolute', top:'90px', right:'500px' }}>1.&nbsp;{one && one.val()}</span>
-                <span style={{position:'absolute' , top:'240px', right:'30px'}}>2.&nbsp;{two && two.val()}</span>
-                <span style={{position:'absolute' ,top:'580px', right:'30px' }}>3.&nbsp;{three && three.val()}</span>
-                <span style={{position:'absolute' ,top:'925px', right:'200px'}}>4.&nbsp;{four && four.val()}</span>
-                <span style={{position:'absolute' ,top:'965px', right:'620px' }}>5.&nbsp;{five && five.val()}</span>
-                <span style={{position:'absolute' ,top:'965px', left:'730px'}}>6.&nbsp;{six && six.val()}</span>
-                <span style={{position:'absolute' ,top:'925px', left:'240px' }}>7.&nbsp;{seven && seven.val()}</span>
-                <span style={{position:'absolute' , top:'585px', left:'20px' }}>8.&nbsp;{eight && eight.val()}</span>
-                <span style={{position:'absolute', top:'240px', left:'90px' }}>9.&nbsp;{nine && nine.val()}</span>
-                <span style={{position:'absolute', top:'90px', left:'540px' }}>10.&nbsp;{ten && ten.val()}</span>
+                <span style={{position:'absolute', top:'120px', right:'500px' }}>1.&nbsp;{one && one.val()}</span>
+                <span style={{position:'absolute' , top:'270px', right:'30px'}}>2.&nbsp;{two && two.val()}</span>
+                <span style={{position:'absolute' ,top:'610px', right:'30px' }}>3.&nbsp;{three && three.val()}</span>
+                <span style={{position:'absolute' ,top:'945px', right:'160px'}}>4.&nbsp;{four && four.val()}</span>
+                <span style={{position:'absolute' ,top:'995px', right:'620px' }}>5.&nbsp;{five && five.val()}</span>
+                <span style={{position:'absolute' ,top:'995px', left:'730px'}}>6.&nbsp;{six && six.val()}</span>
+                <span style={{position:'absolute' ,top:'955px', left:'200px' }}>7.&nbsp;{seven && seven.val()}</span>
+                <span style={{position:'absolute' , top:'615px', left:'20px' }}>8.&nbsp;{eight && eight.val()}</span>
+                <span style={{position:'absolute', top:'250px', left:'90px' }}>9.&nbsp;{nine && nine.val()}</span>
+                <span style={{position:'absolute', top:'120px', left:'540px' }}>10.&nbsp;{ten && ten.val()}</span>
                 <span style={{position:'absolute' }}>{eleven && eleven.val()}</span>
             </div>
 
