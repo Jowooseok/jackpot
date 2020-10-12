@@ -4,6 +4,7 @@ import Monitor from "./page/monitor";
 import { BrowserRouter,Route,Switch } from "react-router-dom";
 import Winner from "./page/winner";
 import Rank from "./page/rank";
+import Table from "./page/table";
 const App = () => {
     return (
         <BrowserRouter>
@@ -13,6 +14,7 @@ const App = () => {
                 <Route path="/monitor" component={Monitor}/>
                 <Route path="/winner" component={Winner}/>
                 <Route path="/rank" component={Rank}/>
+                <Route path="/table" component={Table}/>
             </Switch>
 
         </BrowserRouter>
