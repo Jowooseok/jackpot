@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as firebase from 'firebase';
 import { useObject } from 'react-firebase-hooks/database';
-import useInterval from "react-useinterval";
 import 'moment/locale/ko';
 const Dealer = () => {
     let moment = require('moment');
