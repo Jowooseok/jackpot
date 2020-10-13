@@ -2,7 +2,11 @@ import React from "react";
 import * as firebase from 'firebase';
 import { useObject } from 'react-firebase-hooks/database';
 import back from '../static/table.png'
-import buyin from '../static/buyin.svg'
+import buyin1 from '../static/buyin1.png'
+import buyin2 from '../static/buyin2.png'
+import buyin3 from '../static/buyin3.png'
+import buyin4 from '../static/buyin4.png'
+
 
 
 const Table = () => {
@@ -45,23 +49,30 @@ const Table = () => {
                 <div>
                     <span style={{ position: 'absolute', top: '120px', right: '500px' }}>1.&nbsp;{one && one.val()}</span>
                     {oneB && oneB.val() === 1 ?
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '310px', right: '710px' }} />
+                        <img src={buyin1} style={{ position: 'absolute', top: '310px', right: '620px' }} />
                         :
                         <></>
                     }
                     {oneB && oneB.val() === 2 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '310px', right: '710px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '310px', right: '660px' }} />
+                            <img src={buyin2} style={{ position: 'absolute', top: '310px', right: '620px' }} />
+
                         </div>
                         :
                         <></>
                     }
                     {oneB && oneB.val() === 3 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '310px', right: '710px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '310px', right: '660px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '310px', right: '610px' }} />
+                            <img src={buyin3} style={{ position: 'absolute', top: '310px', right: '620px' }} />
+
+                        </div>
+                        :
+                        <></>
+                    }
+                    {oneB && oneB.val() === 4 ?
+                        <div>
+                            <img src={buyin4} style={{ position: 'absolute', top: '310px', right: '620px' }} />
+
                         </div>
                         :
                         <></>
@@ -71,14 +82,13 @@ const Table = () => {
                 <div>
                     <span style={{ position: 'absolute', top: '270px', right: '30px' }}>2.&nbsp;{two && two.val()}</span>
                     {twoB && twoB.val() === 1 ?
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '370px', right: '470px' }} />
+                        <img src={buyin1} style={{ position: 'absolute', top: '370px', right: '320px' }} />
                         :
                         <></>
                     }
                     {twoB && twoB.val() === 2 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '370px', right: '470px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '370px', right: '420px' }} />
+                            <img src={buyin2} style={{ position: 'absolute', top: '370px', right: '320px' }} />
 
                         </div>
                         :
@@ -86,9 +96,14 @@ const Table = () => {
                     }
                     {twoB && twoB.val() === 3 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '370px', right: '470px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '370px', right: '420px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '370px', right: '370px' }} />
+                            <img src={buyin3} style={{ position: 'absolute', top: '370px', right: '320px' }} />
+                        </div>
+                        :
+                        <></>
+                    }
+                    {twoB && twoB.val() === 4 ?
+                        <div>
+                            <img src={buyin4} style={{ position: 'absolute', top: '370px', right: '320px' }} />
                         </div>
                         :
                         <></>
@@ -98,14 +113,13 @@ const Table = () => {
                 <div>
                     <span style={{ position: 'absolute', top: '610px', right: '30px' }}>3.&nbsp;{three && three.val()}</span>
                     {threeB && threeB.val() === 1 ?
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '540px', right: '410px' }} />
+                        <img src={buyin1} style={{ position: 'absolute', top: '540px', right: '280px' }} />
                         :
                         <></>
                     }
                     {threeB && threeB.val() === 2 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '540px', right: '410px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '540px', right: '360px' }} />
+                            <img src={buyin2} style={{ position: 'absolute', top: '540px', right: '280px' }} />
 
                         </div>
                         :
@@ -113,56 +127,64 @@ const Table = () => {
                     }
                     {threeB && threeB.val() === 3 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '540px', right: '410px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '540px', right: '360px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '540px', right: '310px' }} />
+                            <img src={buyin3} style={{ position: 'absolute', top: '540px', right: '280px' }} />
+                        </div>
+                        :
+                        <></>
+                    }
+                    {threeB && threeB.val() === 4 ?
+                        <div>
+                            <img src={buyin4} style={{ position: 'absolute', top: '540px', right: '280px' }} />
                         </div>
                         :
                         <></>
                     }
 
+
                 </div>
                 <div>
                     <span style={{ position: 'absolute', top: '945px', right: '160px' }}>4.&nbsp;{four && four.val()}</span>
                     {fourB && fourB.val() === 1 ?
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '740px', right: '500px' }} />
+                        <img src={buyin1} style={{ position: 'absolute', top: '740px', right: '410px' }} />
                         :
                         <></>
                     }
                     {fourB && fourB.val() === 2 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '740px', right: '500px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '740px', right: '450px' }} />
 
 
+                            <img src={buyin2} style={{ position: 'absolute', top: '740px', right: '410px' }} />
                         </div>
                         :
                         <></>
                     }
                     {fourB && fourB.val() === 3 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '740px', right: '500px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '740px', right: '450px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '740px', right: '400px' }} />
+                            <img src={buyin3} style={{ position: 'absolute', top: '740px', right: '410px' }} />
                         </div>
                         :
                         <></>
                     }
-
+                    {fourB && fourB.val() === 4 ?
+                        <div>
+                            <img src={buyin4} style={{ position: 'absolute', top: '740px', right: '410px' }} />
+                        </div>
+                        :
+                        <></>
+                    }
                 </div>
                 <div>
                     <span style={{ position: 'absolute', top: '995px', right: '620px' }}>5.&nbsp;{five && five.val()}</span>
                     {fiveB && fiveB.val() === 1 ?
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '760px', right: '850px' }} />
+                        <img src={buyin1} style={{ position: 'absolute', top: '760px', right: '700px' }} />
 
                         :
                         <></>
                     }
                     {fiveB && fiveB.val() === 2 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '760px', right: '850px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '760px', right: '800px' }} />
 
+                            <img src={buyin2} style={{ position: 'absolute', top: '760px', right: '700px' }} />
 
 
                         </div>
@@ -171,9 +193,16 @@ const Table = () => {
                     }
                     {fiveB && fiveB.val() === 3 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '760px', right: '850px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '760px', right: '800px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '760px', right: '750px' }} />
+                            <img src={buyin3} style={{ position: 'absolute', top: '760px', right: '700px' }} />
+
+                        </div>
+                        :
+                        <></>
+                    }
+                    {fiveB && fiveB.val() === 4 ?
+                        <div>
+                            <img src={buyin4} style={{ position: 'absolute', top: '760px', right: '700px' }} />
+
                         </div>
                         :
                         <></>
@@ -183,18 +212,15 @@ const Table = () => {
                 <div>
                     <span style={{ position: 'absolute', top: '995px', left: '730px' }}>6.&nbsp;{six && six.val()}</span>
                     {sixB && sixB.val() === 1 ?
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '760px', left: '850px' }} />
+                        <img src={buyin1} style={{ position: 'absolute', top: '760px', left: '700px' }} />
 
                         :
                         <></>
                     }
                     {sixB && sixB.val() === 2 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '760px', left: '850px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '760px', left: '800px' }} />
 
-
-
+                            <img src={buyin2} style={{ position: 'absolute', top: '760px', left: '700px' }} />
 
                         </div>
                         :
@@ -202,27 +228,31 @@ const Table = () => {
                     }
                     {sixB && sixB.val() === 3 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '760px', left: '850px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '760px', left: '800px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '760px', left: '750px' }} />
+                            <img src={buyin3} style={{ position: 'absolute', top: '760px', left: '700px' }} />
+                        </div>
+                        :
+                        <></>
+                    }
+                    {sixB && sixB.val() === 4 ?
+                        <div>
+                            <img src={buyin4} style={{ position: 'absolute', top: '760px', left: '700px' }} />
                         </div>
                         :
                         <></>
                     }
 
+
                 </div>
                 <span style={{ position: 'absolute', top: '955px', left: '200px' }}>7.&nbsp;{seven && seven.val()}</span>
                 {sevenB && sevenB.val() === 1 ?
-                    <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '740px', left: '500px' }} />
+                    <img src={buyin1} style={{ position: 'absolute', top: '740px', left: '410px' }} />
 
                     :
                     <></>
                 }
                 {sevenB && sevenB.val() === 2 ?
                     <div>
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '740px', left: '500px' }} />
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '740px', left: '450px' }} />
-
+                        <img src={buyin2} style={{ position: 'absolute', top: '740px', left: '410px' }} />
 
 
                     </div>
@@ -231,9 +261,14 @@ const Table = () => {
                 }
                 {sevenB && sevenB.val() === 3 ?
                     <div>
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '740px', left: '500px' }} />
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '740px', left: '450px' }} />
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '740px', left: '400px' }} />
+                        <img src={buyin3} style={{ position: 'absolute', top: '740px', left: '410px' }} />
+                    </div>
+                    :
+                    <></>
+                }
+                {sevenB && sevenB.val() === 4 ?
+                    <div>
+                        <img src={buyin4} style={{ position: 'absolute', top: '740px', left: '410px' }} />
                     </div>
                     :
                     <></>
@@ -242,15 +277,14 @@ const Table = () => {
                 <div>
                     <span style={{ position: 'absolute', top: '615px', left: '20px' }}>8.&nbsp;{eight && eight.val()}</span>
                     {eightB && eightB.val() === 1 ?
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '540px', left: '400px' }} />
+                        <img src={buyin1} style={{ position: 'absolute', top: '540px', left: '280px' }} />
 
                         :
                         <></>
                     }
                     {eightB && eightB.val() === 2 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '540px', left: '400px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '540px', left: '350px' }} />
+                            <img src={buyin2} style={{ position: 'absolute', top: '540px', left: '280px' }} />
 
 
                         </div>
@@ -259,9 +293,14 @@ const Table = () => {
                     }
                     {eightB && eightB.val() === 3 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '540px', left: '400px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '540px', left: '350px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '540px', left: '300px' }} />
+                            <img src={buyin3} style={{ position: 'absolute', top: '540px', left: '280px' }} />
+                        </div>
+                        :
+                        <></>
+                    }
+                    {eightB && eightB.val() === 4 ?
+                        <div>
+                            <img src={buyin4} style={{ position: 'absolute', top: '540px', left: '280px' }} />
                         </div>
                         :
                         <></>
@@ -271,15 +310,14 @@ const Table = () => {
                 <div>
                     <span style={{ position: 'absolute', top: '250px', left: '90px' }}>9.&nbsp;{nine && nine.val()}</span>
                     {nineB && nineB.val() === 1 ?
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '370px', left: '470px' }} />
+                        <img src={buyin1} style={{ position: 'absolute', top: '370px', left: '320px' }} />
 
                         :
                         <></>
                     }
                     {nineB && nineB.val() === 2 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '370px', left: '470px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '370px', left: '420px' }} />
+                            <img src={buyin2} style={{ position: 'absolute', top: '370px', left: '320px' }} />
 
                         </div>
                         :
@@ -287,9 +325,14 @@ const Table = () => {
                     }
                     {nineB && nineB.val() === 3 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '370px', left: '470px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '370px', left: '420px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '370px', left: '370px' }} />
+                            <img src={buyin3} style={{ position: 'absolute', top: '370px', left: '320px' }} />
+                        </div>
+                        :
+                        <></>
+                    }
+                    {nineB && nineB.val() === 4 ?
+                        <div>
+                            <img src={buyin4} style={{ position: 'absolute', top: '370px', left: '320px' }} />
                         </div>
                         :
                         <></>
@@ -299,29 +342,36 @@ const Table = () => {
                 <div>
                     <span style={{ position: 'absolute', top: '120px', left: '540px' }}>10.&nbsp;{ten && ten.val()}</span>
                     {tenB && tenB.val() === 1 ?
-                        <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '310px', left: '710px' }} />
+                        <img src={buyin1} style={{ position: 'absolute', top: '310px', left: '620px' }} />
 
                         :
                         <></>
                     }
                     {tenB && tenB.val() === 2 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '310px', left: '710px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '310px', left: '660px' }} />
 
+                            <img src={buyin2} style={{ position: 'absolute', top: '310px', left: '620px' }} />
                         </div>
                         :
                         <></>
                     }
                     {tenB && tenB.val() === 3 ?
                         <div>
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '310px', left: '710px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '310px', left: '660px' }} />
-                            <img src={buyin} style={{ width: '50px', height: '120px', position: 'absolute', top: '310px', left: '610px' }} />
+                            <img src={buyin3} style={{ position: 'absolute', top: '310px', left: '620px' }} />
+
                         </div>
                         :
                         <></>
                     }
+                    {tenB && tenB.val() === 4 ?
+                        <div>
+                            <img src={buyin4} style={{ position: 'absolute', top: '310px', left: '620px' }} />
+
+                        </div>
+                        :
+                        <></>
+                    }
+
 
                 </div>
             </div>
