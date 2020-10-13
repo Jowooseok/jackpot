@@ -46,9 +46,9 @@ const Table = () => {
         }}>
             <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
             <div style={{ fontSize: '4em', color: 'white', fontFamily: `Noto Sans KR, sans-serif` }}>
-            <span style={{top:'49%', left:'43%', position:'absolute'}}>Total : <span style={{color:'#ffd966'}}>{totalB && totalB.val()}</span></span>
+            <span style={{top:'49%', fontSize:'70px',left:'43%', position:'absolute'}}>Total : <span style={{color:'#760c0c'}}>{totalB && totalB.val()}</span></span>
                 <div>
-                    <span style={{ position: 'absolute', top: '120px', right: '500px' }}>1.&nbsp;<span style={{color:'#ffd966'}}>{one && one.val()}</span></span>
+                    <span style={{ position: 'absolute', top: '120px', right: '500px' }}>1.&nbsp;<span style={{color:'yellow'}}>{one && one.val()}</span></span>
                     {oneB && oneB.val() === 1 ?
                         <img src={buyin1} style={{ position: 'absolute', top: '310px', right: '620px' }} />
                         :
@@ -81,7 +81,7 @@ const Table = () => {
 
                 </div>
                 <div>
-                    <span style={{ position: 'absolute', top: '270px', right: '30px' }}>2.&nbsp;<span style={{color:'#ffd966'}}>{two && two.val()}</span></span>
+                    <span style={{ position: 'absolute', top: '270px', right: '30px' }}>2.&nbsp;<span style={{color:'yellow'}}>{two && two.val()}</span></span>
                     {twoB && twoB.val() === 1 ?
                         <img src={buyin1} style={{ position: 'absolute', top: '370px', right: '320px' }} />
                         :
@@ -112,7 +112,7 @@ const Table = () => {
 
                 </div>
                 <div>
-                    <span style={{ position: 'absolute', top: '610px', right: '30px' }}>3.&nbsp;<span style={{color:'#ffd966'}}>{three && three.val()}</span></span>
+                    <span style={{ position: 'absolute', top: '610px', right: '30px' }}>3.&nbsp;<span style={{color:'yellow'}}>{three && three.val()}</span></span>
                     {threeB && threeB.val() === 1 ?
                         <img src={buyin1} style={{ position: 'absolute', top: '540px', right: '280px' }} />
                         :
@@ -144,7 +144,7 @@ const Table = () => {
 
                 </div>
                 <div>
-                    <span style={{ position: 'absolute', top: '945px', right: '160px' }}>4.&nbsp;<span style={{color:'#ffd966'}}>{four && four.val()}</span></span>
+                    <span style={{ position: 'absolute', top: '945px', right: '160px' }}>4.&nbsp;<span style={{color:'yellow'}}>{four && four.val()}</span></span>
                     {fourB && fourB.val() === 1 ?
                         <img src={buyin1} style={{ position: 'absolute', top: '740px', right: '410px' }} />
                         :
@@ -175,7 +175,7 @@ const Table = () => {
                     }
                 </div>
                 <div>
-                    <span style={{ position: 'absolute', top: '995px', right: '620px' }}>5.&nbsp;<span style={{color:'#ffd966'}}>{five && five.val()}</span></span>
+                    <span style={{ position: 'absolute', top: '995px', right: '620px' }}>5.&nbsp;<span style={{color:'yellow'}}>{five && five.val()}</span></span>
                     {fiveB && fiveB.val() === 1 ?
                         <img src={buyin1} style={{ position: 'absolute', top: '760px', right: '700px' }} />
 
@@ -211,7 +211,7 @@ const Table = () => {
 
                 </div>
                 <div>
-                    <span style={{ position: 'absolute', top: '995px', left: '730px' }}>6.&nbsp;<span style={{color:'#ffd966'}}>{six && six.val()}</span></span>
+                    <span style={{ position: 'absolute', top: '995px', left: '730px' }}>6.&nbsp;<span style={{color:'yellow'}}>{six && six.val()}</span></span>
                     {sixB && sixB.val() === 1 ?
                         <img src={buyin1} style={{ position: 'absolute', top: '760px', left: '700px' }} />
 
@@ -244,7 +244,7 @@ const Table = () => {
 
 
                 </div>
-                <span style={{ position: 'absolute', top: '955px', left: '200px' }}>7.&nbsp;<span style={{color:'#ffd966'}}>{seven && seven.val()}</span></span>
+                <span style={{ position: 'absolute', top: '955px', left: '200px' }}>7.&nbsp;<span style={{color:'yellow'}}>{seven && seven.val()}</span></span>
                 {sevenB && sevenB.val() === 1 ?
                     <img src={buyin1} style={{ position: 'absolute', top: '740px', left: '410px' }} />
 
@@ -276,7 +276,7 @@ const Table = () => {
                 }
 
                 <div>
-                    <span style={{ position: 'absolute', top: '615px', left: '20px' }}>8.&nbsp;<span style={{color:'#ffd966'}}>{eight && eight.val()}</span></span>
+                    <span style={{ position: 'absolute', top: '615px', left: '20px' }}>8.&nbsp;<span style={{color:'yellow'}}>{eight && eight.val()}</span></span>
                     {eightB && eightB.val() === 1 ?
                         <img src={buyin1} style={{ position: 'absolute', top: '540px', left: '280px' }} />
 
@@ -309,7 +309,7 @@ const Table = () => {
 
                 </div>
                 <div>
-                    <span style={{ position: 'absolute', top: '250px', left: '90px' }}>9.&nbsp;<span style={{color:'#ffd966'}}>{nine && nine.val()}</span></span>
+                    <span style={{ position: 'absolute', top: '250px', left: '90px' }}>9.&nbsp;<span style={{color:'yellow'}}>{nine && nine.val()}</span></span>
                     {nineB && nineB.val() === 1 ?
                         <img src={buyin1} style={{ position: 'absolute', top: '370px', left: '320px' }} />
 
@@ -341,7 +341,7 @@ const Table = () => {
 
                 </div>
                 <div>
-                    <span style={{ position: 'absolute', top: '120px', left: '540px' }}>10.&nbsp;<span style={{color:'#ffd966'}}>{ten && ten.val()}</span></span>
+                    <span style={{ position: 'absolute', top: '120px', left: '540px' }}>10.&nbsp;<span style={{color:'yellow'}}>{ten && ten.val()}</span></span>
                     {tenB && tenB.val() === 1 ?
                         <img src={buyin1} style={{ position: 'absolute', top: '310px', left: '620px' }} />
 
