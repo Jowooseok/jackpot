@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as firebase from 'firebase';
 import { useObject } from 'react-firebase-hooks/database';
-import useInterval from "react-useinterval";
 import 'moment/locale/ko';
 const Dealer = () => {
     let moment = require('moment');
@@ -95,6 +94,9 @@ const Dealer = () => {
     useEffect(() => {
         if (subB && oneB && twoB && threeB && sevenB && eightB && nineB && tenB && elevenB) {
             setTotal(subB.val() + oneB.val() + twoB.val() + threeB.val() + fourB.val() + fiveB.val() + sixB.val() + sevenB.val() + eightB.val() + nineB.val() + tenB.val() + elevenB.val())
+            firebase.database().ref('user').update({
+                totalBuyin: subB.val() + oneB.val() + twoB.val() + threeB.val() + fourB.val() + fiveB.val() + sixB.val() + sevenB.val() + eightB.val() + nineB.val() + tenB.val() + elevenB.val()
+            })
         }
     }, [oneB, twoB, threeB, fourB, fiveB, sixB, sevenB, eightB, nineB, tenB, elevenB, subB]);
 
